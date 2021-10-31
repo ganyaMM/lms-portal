@@ -1,0 +1,49 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1' crossorigin='anonymous')
+  style.
+    body {
+    font-family: "Lato", sans-serif;
+    }
+    .sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+    }
+    .sidenav a {
+    padding: 50px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    }
+    .sidenav a:hover {
+    color: #f1f1f1;
+    }
+    .card {
+    margin-left: 500px;
+    margin-top: 200px;
+    }
+    @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    }
+.sidenav
+  a(href='/users/login') DASHBOARD
+  a(href='/liveclass/liveclass') LIVE CLASSES
+  a(href='/users/login') ASSESSMENT
+.card.text-white.bg-dark.mb-3(style='max-width: 40rem; height: 250px;')
+  .card-header
+    strong ASSESSMENT
+  .card-body
+    h5.card-title NO ASSESSMENT YET
+    p.card-text

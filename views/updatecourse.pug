@@ -1,0 +1,243 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1' crossorigin='anonymous')
+  link(rel='stylesheet' href='up&create.css')
+  title Document
+  style.
+    /* for design */
+    * {box-sizing: border-box}
+    body{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    }
+    .margin{
+    background-color: lightgrey;
+    width: 300px;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 20px;
+    }
+    /* Full-width input fields */
+    input[type=text], input[type=password] , input[type=email]{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    }
+    input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+    }
+    hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+    }
+    /* Set a style for all buttons */
+    button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    }
+    button:hover {
+    opacity:1;
+    }
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+    }
+    /* Float cancel and signup buttons and add an equal width */
+    .cancelbtn, .signupbtn {
+    float: left;
+    width: 50%;
+    }
+    /* Add padding to container elements */
+    .container
+    {
+    padding: 16px;
+    }
+    .container2 {
+    padding: 16px;
+    }
+    /* Clear floats */
+    .clearfix::after
+    {
+    content: "";
+    clear: both;
+    display: table;
+    }
+    .clear::after{
+    content: "";
+    clear: both;
+    display: table;
+    }
+    /* Change styles for cancel button and signup button on extra small screens */
+    @media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+    width: 100%;
+    }
+    }
+    /* left menu */
+    /* The side navigation menu */
+    .sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    }
+    /* The navigation menu links */
+    .sidenav a {
+    padding: 8px 8px 50px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    }
+    /* When you mouse over the navigation links, change their color */
+    .sidenav a:hover {
+    color: #f1f1f1;
+    }
+    /* Position and style the close button (top right corner) */
+    .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    }
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    #main {
+    transition: margin-left .5s;
+    padding: 20px;
+    }
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    }
+    .navbar2 {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+    }
+    .navbar2 a {
+    float: right;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    }
+    .kira{
+    width: 1000px;
+    }
+#main
+  div
+    #mySidenav.sidenav
+      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      a(href='/users/login') DASHBORD
+      a(href='/addingcourse/createnewcourse') CREATE A NEW COURSE
+      a(href='/viewcourse/viewcourse') MY COURSES
+      //- a(href='/updatecourse/updatecourse') UPDATE COURSE
+      a(href='/changepassemail/changepassemail') EDIT USER
+
+    // Use any element to open  the sidenav
+    span(onclick='openNav()')
+      button
+        h1  CLICK TO OPEN MENU BAR
+    // Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page
+    form(name='myForm' action='/viewcourse/update' method='POST')
+      input#id(name="_id" type="hidden" value=product._id)
+      label(for='firstname') First name:
+      input#firstname(type='text' value=product.firstname name='firstname' required='')
+      br
+      br
+      label(for='email') email:
+      input#email(type='email' value=product.email  name='email' placeholder='type your registred email' required='')
+      br
+      br
+      hr
+      // use here
+      div
+        label.form-label(for='validationCustomUsername') category
+        .input-group.has-validation
+          select#validationCustom04.form-select(required='')
+            option(selected='' disabled='' value='') choose..
+            option Full Stack Web Developer - MEAN Stack
+            option  Marketing Specialist
+            option Cloud Architect
+            option Artificial Intelligence Engineer
+            option Data Scientist
+            option PMP&reg; Plus
+            option Lean Six Sigma Expert
+            option DevOps Engineer
+            option Business Analyst
+            option Digital Project Manager
+            option Data Analyst
+            option PMP&reg; Renewal Pack
+            option Cyber Security Expert
+            option Big Data Engineer
+            option ITIL&reg; Lifecycle Expert Program
+            option ITIL&reg; Capability Expert Program
+            option Automation Testing Masters Program
+            option Integrated Program in Big Data and Data Science
+        br
+        br
+        // use here
+        label(for='categoryname') type your selected category:
+        input#categoryname(type='text' value=product.categoryname  name='categoryname' required='')
+        br
+        br
+        label(for='liner') one liner:
+        input#liner(type='text' value=product.liner name='liner' required='')
+        br
+        br
+        label(for='hours') duration in hours:
+        input#hours(type='text' value=product.hours  name='hours' required='')
+        br
+        br
+        label(for='Language') Language:
+        input#Language(type='text' value=product.Language name='Language' required='')
+        br
+        br
+        label(for='myfile') Upload Cover Photo:
+        input#myfile(type='file' value=product.myfile name='myfile' required='')
+        br
+        br
+        textarea.kira(name='message' type='text' value=product.message rows='10' cols='200' style='margin-top: 10px;') write a discription.
+        br
+        br
+        button.btn.btn-primary(type='submit' onclick='myFunction()') UPDATED COURSE 
+  script.
+    /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+    function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+    /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+    function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.body.style.backgroundColor = "white";
+    }
+    function myFunction() {
+    alert(" COURSE IS UPDATED ");
+    }

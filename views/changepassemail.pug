@@ -1,0 +1,196 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  link(rel='stylesheet' href='changepass&email.css')
+  style.
+    * {box-sizing: border-box; }
+    body{
+    margin-top: 10px;
+    background-Color:white;
+    
+    }
+    .user{
+    text-align: center;
+    }
+    /* Full-width input fields */
+    input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    }
+    input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+    }
+    hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+    }
+    /* Set a style for all buttons */
+    button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    }
+    button:hover {
+    opacity:1;
+    }
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+    }
+    /* Float cancel and signup buttons and add an equal width */
+    .cancelbtn, .signupbtn {
+    float: left;
+    width: 50%;
+    }
+    /* Add padding to container elements */
+    .container
+    {
+    padding: 16px;
+    }
+    .container2 {
+    padding: 16px;
+    }
+    /* Clear floats */
+    .clearfix::after
+    {
+    content: "";
+    clear: both;
+    display: table;
+    }
+    .clear::after{
+    content: "";
+    clear: both;
+    display: table;
+    }
+    /* Change styles for cancel button and signup button on extra small screens */
+    @media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+    width: 100%;
+    }
+    }
+    /* left menu */
+    /* The side navigation menu */
+    .sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    }
+    /* The navigation menu links */
+    .sidenav a {
+    padding: 8px 8px 50px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    }
+    /* When you mouse over the navigation links, change their color */
+    .sidenav a:hover {
+    color: #f1f1f1;
+    }
+    /* Position and style the close button (top right corner) */
+    .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    }
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    #main {
+    transition: margin-left .5s;
+    padding: 20px;
+    }
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    }
+    .navbar2 {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+    }
+    .navbar2 a {
+    float: left;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    }
+
+
+
+
+.navbar2
+  a.active(href='#')  ENLIGHTENMENT  
+div
+  #mySidenav.sidenav
+    a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+    a(href='/users/login') DASHBORD
+    a(href='/addingcourse/createnewcourse') CREATE A NEW COURSE
+    a(href='/viewcourse/viewcourse') MY COURSES
+    //- a(href='/updatecourse/updatecourse') UPDATE COURSE
+    a(href='/changepassemail/changepassemail') EDIT USER
+  // Use any element to open the sidenav
+  span(onclick='openNav()')
+    button
+      h1  CLICK TO OPEN MENU BAR
+  // Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page
+  
+  script.
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    }
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    }
+h1.user EDIT USER PAGE
+hr
+form(action='action_page.php' style='border:1px solid #ccc')
+  .container
+    h1 Change Profile
+    hr
+    label(for='name')
+      b Full Name
+    input(type='text' placeholder='Enter name' name='name' required='')
+    label(for='email')
+      b Email
+    input(type='text' placeholder='Enter Email' name='email' required='')
+    .clearfix
+      button.signupbtn(type='submit') Change Profile
+hr
+form(action='action_page.php' style='border:1px solid #ccc')
+  .container2
+    h1 Change Password
+    hr
+    label(for='psw')
+      b Password
+    input(type='password' placeholder='Enter Password' name='psw' required='')
+    label(for='psw-repeat')
+      b Conform New Password
+    input(type='password' placeholder='Repeat Password' name='psw-repeat' required='')
+    .clear
+      button.signupbtn(type='submit') Change Password
